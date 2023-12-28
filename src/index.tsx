@@ -152,7 +152,7 @@ class App extends React.Component<{}, Chat> {
         <MainContainer>
           <ChatContainer>
             <ConversationHeader>
-              <ConversationHeader.Content userName="CONVAI-CHAT" />
+              <ConversationHeader.Content userName="SOURCE-AI" />
               <ConversationHeader.Actions>
                 <Button onClick={this.reset}>Reset</Button>
               </ConversationHeader.Actions>
