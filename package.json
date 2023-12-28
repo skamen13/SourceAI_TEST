@@ -1,5 +1,6 @@
 {
     "name": "convai-react-chat-example",
+    "proxy": "https://source-ai-beta.onrender.com",
     "scripts": {
         "webpack-dev": "webpack server --mode development --open --hot",
         "start": "concurrently --kill-others \"npm run webpack-dev\""
