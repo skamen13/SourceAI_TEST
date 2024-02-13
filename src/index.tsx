@@ -148,40 +148,40 @@ class App extends React.Component<{}, Chat> {
 
   render() {
     return (
-      <div style={{ position: "relative", margin: "auto", height: "500px", width: "50%" }}>
-        <MainContainer>
-          <ChatContainer>
-            <ConversationHeader>
-              <ConversationHeader.Content userName="SOURCE-AI" />
-              <ConversationHeader.Actions>
-                <Button onClick={this.reset}>Reset</Button>
-              </ConversationHeader.Actions>
-            </ConversationHeader>
-            <MessageList>
-              {this.state.messages.map(function (msg: ChatMessage, index: number) {
-                return <Message
-                  model={{
-                    message: msg.msg,
-                    sender: msg.speaker,
-                    direction: msg.speaker == "Me" ? "outgoing" : "incoming",
-                    position: "normal",
-                  }} key={index}
-                />
+        <div style={{ position: "relative", margin: "auto", height: "500px", width: "50%" }}>
+          <MainContainer>
+            <ChatContainer>
+              <ConversationHeader>
+                <ConversationHeader.Content userName="SOURCE-AI" />
+                <ConversationHeader.Actions>
+                  <Button onClick={this.reset}>Reset</Button>
+                </ConversationHeader.Actions>
+              </ConversationHeader>
+              <MessageList>
+                {this.state.messages.map(function (msg: ChatMessage, index: number) {
+                  return <Message
+                      model={{
+                        message: msg.msg,
+                        sender: msg.speaker,
+                        direction: msg.speaker == "Me" ? "outgoing" : "incoming",
+                        position: "normal",
+                      }} key={index}
+                  />
 
-              })}
-            </MessageList>
-          </ChatContainer>
-        </MainContainer>
-        <div className='cs-message-input'>
-          <InputToolbox>
-            <Button onClick={this.talky} icon={<FontAwesomeIcon icon={this.talkMsg == "Talk" ? faMicrophoneSlash : faMicrophone} />}></Button>
-          </InputToolbox>
-          <MessageInput value={this.state.userMsg} onChange={this.handleMsgChange} sendButton={false} attachButton={false} />
-          <InputToolbox>
-            <Button onClick={this.sendMsg} icon={<FontAwesomeIcon icon={faPlay} />} />
-          </InputToolbox>
+                })}
+              </MessageList>
+            </ChatContainer>
+          </MainContainer>
+          <div className='cs-message-input'>
+            <InputToolbox>
+              <Button onClick={this.talky} icon={<FontAwesomeIcon icon={this.talkMsg == "Talk" ? faMicrophoneSlash : faMicrophone} />}></Button>
+            </InputToolbox>
+            <MessageInput value={this.state.userMsg} onChange={this.handleMsgChange} sendButton={false} attachButton={false} />
+            <InputToolbox>
+              <Button onClick={this.sendMsg} icon={<FontAwesomeIcon icon={faPlay} />} />
+            </InputToolbox>
+          </div>
         </div>
-      </div>
     );
   }
 }
